@@ -50,8 +50,8 @@ To automatically install & run wg-easy, simply run:
 <pre>
 $ docker run -d \
   --name=VPNServer \
-  -e WG_HOST=artesia.eclipse-us.com \
-  -e PASSWORD=Eclipse2010! \
+  -e WG_HOST=HOSTNAME \
+  -e PASSWORD=PASSWORD \
   -v ~/.wg-easy:/etc/wireguard \
   -p 51820:51820/udp \
   -p 51821:51821/tcp \
