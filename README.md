@@ -54,7 +54,7 @@ $ docker run -d \
   -e PASSWORD=PASSWORD \
   -v ~/.wg-easy:/etc/wireguard \
   -p 51820:51820/udp \
-  -p 51821:51821/tcp \
+  -p 80:80/tcp \
   --cap-add=NET_ADMIN \
   --cap-add=SYS_MODULE \
   --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
