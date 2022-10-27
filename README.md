@@ -49,12 +49,12 @@ To automatically install & run wg-easy, simply run:
 
 <pre>
 $ docker run -d \
-  --name=VPNServer \
-  -e WG_HOST=HOSTNAME \
-  -e PASSWORD=PASSWORD \
+  --name=vpnserver \
+  -e WG_HOST=YOUR_SERVER_IP \
+  -e PASSWORD=YOUR_ADMIN_PASSWORD \
   -v ~/.wg-easy:/etc/wireguard \
   -p 51820:51820/udp \
-  -p 80:80/tcp \
+  -p 51821:51821/tcp \
   --cap-add=NET_ADMIN \
   --cap-add=SYS_MODULE \
   --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
@@ -101,9 +101,9 @@ These options can be configured by setting environment variables using `-e KEY="
 To update to the latest version, simply run:
 
 ```bash
-docker stop VPNServer
-docker rm VPNServer
-docker pull eclipsesolutions/vpnserver
+docker stop wg-easy
+docker rm wg-easy
+docker pull weejewel/wg-easy
 ```
 
 And then run the `docker run -d \ ...` command above again.
