@@ -52,6 +52,7 @@ $ docker run -d \
   --name=vpnserver \
   -e WG_HOST=YOUR_SERVER_IP \
   -e PASSWORD=YOUR_ADMIN_PASSWORD \
+  -e WG_DEFAULT_DNS=YOUR DNS SETTINGS \
   -v ~/.wg-easy:/etc/wireguard \
   -p 51820:51820/udp \
   -p 51821:51821/tcp \
@@ -63,6 +64,8 @@ $ docker run -d \
   eclipsesolutions/vpnserver
 </pre>
 
+> 💡 Replace `YOUR_SERVER_IP` with your WAN IP, or a Dynamic DNS hostname.
+>
 > 💡 Replace `YOUR_SERVER_IP` with your WAN IP, or a Dynamic DNS hostname.
 > 
 > 💡 Replace `YOUR_ADMIN_PASSWORD` with a password to log in on the Web UI.
